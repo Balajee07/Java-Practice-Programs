@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="content-type"
+	content="application/xhtml+xml; charset=UTF-8" />
+<title>Hello App Engine</title>
+</head>
+
+<body style="margin-left: 70px; margin-top: 50px;">
+	<h1>Hello!</h1>
+	<form action="/doCalculation" method="get">
+		<table>
+			<tr>
+				<td><input type="number" name="firstNumber"
+					placeholder="number 1"></td>
+			</tr>
+			<tr>
+				<td><input type="number" name="secondNumber"
+					placeholder="number 2"></td>
+			</tr>
+			<tr>
+				<td><select name="operatorType">
+						<option value="+">+</option>
+						<option value="-">-</option>
+						<option value="*">*</option>
+						<option value="/">/</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Calculate"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
