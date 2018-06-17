@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="content-type"
+	content="application/xhtml+xml; charset=UTF-8" />
+<title>User Login</title>
+<style type="text/css">
+input {
+	width: 150px;
+	margin-top: 10px;
+}
+</style>
+</head>
+<body style="text-align: center;">
+	<h4>Enter your details here</h4>
+	<br>
+	<fieldset>
+		<legend>Login</legend>
+		<form action="/loginHandler" method="post">
+			<input type="email" name="email" placeholder="Email id"><br>
+			<input type="password" name="password" placeholder="Password"><br>
+				<input type="submit" value="Login">
+		</form>
+	</fieldset>
+</body>
+</html>
