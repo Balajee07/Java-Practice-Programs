@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>CompanyName</param-name>
+    <param-value>Mcken's Restaurant</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>showChineseFood</servlet-name>
+    <servlet-class>ChineseFood</servlet-class>
+    <init-param>
+      <param-name>Fried Rice</param-name>
+      <param-value>CF1021</param-value>
+    </init-param>
+    <init-param>
+      <param-name>Spring Roll</param-name>
+      <param-value>CF1022</param-value>
+    </init-param>
+    <init-param>
+      <param-name>Ma Po Tofu</param-name>
+      <param-value>CF1034</param-value>
+    </init-param>
+    <init-param>
+      <param-name>Noodles</param-name>
+      <param-value>CF2034</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>showIndianFood</servlet-name>
+    <servlet-class>IndianFood</servlet-class>
+    <init-param>
+      <param-name>Dosa</param-name>
+      <param-value>IF2034</param-value>
+    </init-param>
+    <init-param>
+      <param-name>Briyani</param-name>
+      <param-value>IF2044</param-value>
+    </init-param>
+    <init-param>
+      <param-name>Idly</param-name>
+      <param-value>IF2011</param-value>
+    </init-param>
+    <init-param>
+      <param-name>Aapam</param-name>
+      <param-value>IF2065</param-value>
+    </init-param>
+  </servlet>
+  <filter>
+    <filter-name>openCapchaVerify</filter-name>
+    <filter-class>CapchaVerify</filter-class>
+    <init-param>
+      <param-name>capchaValue</param-name>
+      <param-value>smwm</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>openCapchaVerify</filter-name>
+    <url-pattern>/CapchaVerify</url-pattern>
+  </filter-mapping>
+</web-app>
