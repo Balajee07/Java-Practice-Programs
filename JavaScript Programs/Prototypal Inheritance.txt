@@ -1,0 +1,36 @@
+//Prototypal Inheritance
+
+//Base class
+let school = {
+  schoolName : "ABC Metric",
+  syllabusType : "State Board",
+  location : "RV nagage",
+  showSchoolInfo : function() {
+    console.log("\nSchool Name : " + this.schoolName + "\nSyllabus : " + this.syllabusType + "\nLocation : " + this.syllabusType);
+  }
+};
+
+let teacherinfo ={
+  teacherName : "kanna",
+  degree : "B.Ed Maths",
+  __proto__ : school,
+};
+
+//inherting base object properties using __proto__ 
+let student1 = {
+  studentName : "Dhana",
+  class : '10th',
+  gender :  "male",
+  __proto__ : teacherinfo,
+};
+
+//accessing own properties
+console.log("\nStudent Name : " + student1.studentName + "\nClass : " + student1.class + "\nGender : " + student1.gender + "\nClass Teacher name : " + student1.teacherName + "\nTeacher Qualification : " + student1.degree);
+
+//accessing the base class properties
+console.log("\nShowing properties of the base object using child class object\n");
+console.log("School Name : " + student1.schoolName + "\nSyllabus : " + student1.syllabusType + "\nLocation : " + student1.syllabusType);
+
+//printing using base object function invoked by child object
+console.log("\n\ndisplay the school information using child object");
+student1.showSchoolInfo();

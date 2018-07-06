@@ -1,0 +1,48 @@
+let company = {
+  companyName : "FULL",
+  location : "Taramani",
+  building : "Acendas",
+};
+console.log(company);
+
+//to get flag for a property
+let propertyFlag = Object.getOwnPropertyDescriptor(company,"companyName");
+console.log(propertyFlag);
+
+//changing the property flags of the "companyName"
+propertyFlag.writable = false;
+propertyFlag.enumerable = false;
+propertyFlag.configurable = false;
+console.log(propertyFlag);
+
+//adding changed property to the company Object
+Object.defineProperty(company,"companyName", propertyFlag);
+
+//to get all the property flags in the Object
+
+let propertyFlags = Object.getOwnPropertyDescriptors(company);
+console.log(propertyFlags);
+
+//changing all the property values to false in Company Object
+propertyFlags.building.writable = false;
+propertyFlags.building.enumerable = false;
+propertyFlags.building.configurable = false;
+propertyFlags.location.writable = false;
+propertyFlags.location.enumerable = false;
+propertyFlags.location.configurable = false;
+
+//adding changed properties to the company Object
+Object.defineProperties(company,propertyFlags);
+console.log(company);
+
+//changing properties flags using built in object function.
+//makes the configurable flag for all the properties as 'false'
+Object.seal(company);
+
+console.log(Object.isSealed(company));   // returns true or false to check object is isSealed
+
+//prevents from adding properties to the 'company' object
+Object.preventExtensions(company);
+
+//we restrict adding removing changing the properties using freeze it sets configurable : false writable : false
+Object.freeze(company);

@@ -1,0 +1,42 @@
+//Function Prototype (F.prototype)
+
+//base class.
+let userCommonDetails = {
+  nationality : "Indian",
+  nationalAnimal : "Tiger",
+  nationalFlower : "lotus",
+  location : {
+    lattitude : '20.5937° N',
+    longitude : '78.9629° E',
+  }
+}
+
+let peop = {
+  name : "raju",
+  age : 23,
+  city : "Chennai",
+  phoneNumber : 45678,
+  gender : "male",
+  __proto__ : userCommonDetails,
+};
+
+//constructor 
+function People(name, age, city, phoneNumber, gender) {
+this.name = name;
+this.age = age;
+this.city = city;
+this.phoneNumber = phoneNumber;
+this.gender = gender;
+}
+
+//assign prototype to the function  
+People.prototype = userCommonDetails;
+
+//creating objects using constructor
+let user1 = new People("Balaji", 22, "chennai", 73877239, "Male");
+
+//accessing own properties using objectname
+console.log("Name : " + user1.name + "\nAge : " + user1.age + "\nCity : " + user1.city + "\nPhonenumber : " + user1.phoneNumber + "\nGender : " + user1.gender);
+
+//accessing base object properties using same object
+console.log("\nNationality : " + user1.nationality + "\nLattitude : " + user1.location.lattitude + "\nLongitude : " + user1.location.longitude + "\nNational Animal : " + user1.nationalAnimal + "\nNational Flower : " + user1.nationalFlower);

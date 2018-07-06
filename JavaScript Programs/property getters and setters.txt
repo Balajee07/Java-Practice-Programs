@@ -1,0 +1,32 @@
+//Property getter and setters.
+
+let User = {
+	//data properties
+	userName: 'vinoth',
+	age: 21,
+	place: 'Chennai',
+	areaCode: 600018,
+
+	//accessor properties
+	//getter for the property phoneNumber
+	get phoneNumber() {
+		return phoneNumber;
+	},
+
+	//Setter fot the propety phoneNumber
+	set phoneNumber(value) {
+		phoneNumber = value;
+	},
+
+	//returns two properties of the user Object using getter
+	get pincode() {
+		return this.place + ' ' + this.areaCode;
+	},
+};
+
+// assigns value to the phoneNumber using setter
+User.phoneNumber = 987654321;
+
+//acessing value of the phoneNumber using getter
+console.log(User.phoneNumber);
+console.log(User.pincode);

@@ -1,0 +1,47 @@
+// creating prototype and getting prototype ans setting prototype
+
+//Base object
+let briyani = {
+  rice : true,
+  water : true,
+  masala : true,
+  vegetables : true,
+  cookingTime : "30mins",
+  preparationTime : '20mins',
+};
+
+//child Object
+let chickenBriyani = Object.create(briyani);
+
+//Adding value to the child object
+chickenBriyani.chicken = true;
+
+//printing all the incredients for chicken briyani
+
+console.log("Chicken Briyani incredients\n");
+console.log("\nrice : " + chickenBriyani.rice + "\nWater : " + chickenBriyani.water + "\nChicken : " + chickenBriyani.chicken + "\nMasala : " + chickenBriyani.masala + "\nVegetables : " + chickenBriyani.vegetables + "\nCooking Time : " + chickenBriyani.cookingTime + "\nPreparation Time : " + chickenBriyani.preparationTime);
+
+//to get prototype from the  object
+
+let briyaniProto = Object.getPrototypeOf(chickenBriyani);
+if(briyaniProto === briyani) {
+  console.log("passed");
+}
+
+//setting the  prototype for the object
+
+let nonVegBriyani = {
+  briyaniType : "Non Vegetarian",
+};
+
+Object.setPrototypeOf(chickenBriyani,nonVegBriyani);
+
+//prototype changed for the chicken briyani
+briyaniProto = Object.getPrototypeOf(chickenBriyani);
+if(briyaniProto === briyani) {
+  console.log("Prototype is not changed");
+}
+else {
+  console.log("Prototype changed to the nonVegBriyani object\n");
+  console.log("Briyani type : " + chickenBriyani.briyaniType);
+}

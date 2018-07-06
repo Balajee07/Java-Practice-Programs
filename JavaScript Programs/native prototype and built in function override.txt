@@ -1,0 +1,17 @@
+//Native prototypes (built-in prototypes)
+
+//Overriding the built in function using Prototype of the respective Object
+//String
+String.prototype.toString  = function() {
+  console.log("This is overrided toString function : " + this);
+};
+"hello".toString();
+
+
+//overriding the native prototype sort function in array
+
+Array.prototype.sort = function() {
+  console.log("\nThis function wont the array because it is overrided duplicate");
+};
+let arr = [2, 45, 1, 7, 6, 8,];
+console.log(arr.sort());
